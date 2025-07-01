@@ -7,11 +7,13 @@ def test_task_creation():
     assert task.description == "Test Description"
     assert task.priority == "high"
     assert not task.completed
+    assert task.id is None  # Ensure task_id is None when not provided
 
 def test_task_to_dict():
-    task = Task(title="Test Task", description="Test Description", priority="high")
+    task = Task(title="Test Task", description="Test Description", priority="high", task_id=1)
     task_dict = task.to_dict()
     assert isinstance(task_dict, dict)
+    assert task_dict["id"] == 1
     assert task_dict["title"] == "Test Task"
     assert task_dict["description"] == "Test Description"
     assert task_dict["priority"] == "high"
