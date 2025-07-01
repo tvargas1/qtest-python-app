@@ -105,11 +105,46 @@ The web interface provides the following pages:
 
 ## Testing
 
-Run the tests:
+The project includes comprehensive unit tests for all Python classes and modules. The tests are organized in the `tests` directory:
 
+- `test_task_model.py`: Tests for the Task class
+- `test_task_service.py`: Tests for the TaskService class
+- `test_exceptions.py`: Tests for custom exception classes
+- `test_cli.py`: Tests for the command-line interface
+- `test_app.py`: Tests for the Streamlit web application
+
+### Running Tests
+
+To run all tests:
+
+```bash
+python -m pytest
 ```
-pytest
+
+### Test Coverage
+
+To run tests with coverage reporting:
+
+```bash
+python -m pytest --cov=src
 ```
+
+For a detailed HTML coverage report:
+
+```bash
+python -m pytest --cov=src --cov-report=html
+```
+
+This will generate a coverage report in the `htmlcov` directory. Open `htmlcov/index.html` in a browser to view the report.
+
+### Test Structure
+
+The tests follow these principles:
+
+1. **Unit Tests**: Each class and its methods are tested independently
+2. **Fixtures**: Common test setup is handled with pytest fixtures
+3. **Mocking**: External dependencies are mocked for isolated testing
+4. **Edge Cases**: Tests include handling of edge cases and error conditions
 
 ## Deployment
 
