@@ -4,7 +4,7 @@ Task service for managing task operations.
 
 import os
 import json
-from typing import List, Dict, Any, Optional
+from typing import List
 
 from src.models.task import Task
 from src.utils.exceptions import TaskNotFoundException
@@ -59,7 +59,7 @@ class TaskService:
             The newly created Task
         """
         task_id = max([task.id for task in self.tasks], default=0) + 1
-        task = Task(task_id, title, description, priority)
+        task = Task(title=title, description=description, priority=priority, task_id=task_id)
         self.tasks.append(task)
         self._save_tasks()
         return task

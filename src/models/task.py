@@ -11,23 +11,23 @@ class Task:
 
     def __init__(
         self,
-        task_id: int,
         title: str,
         description: str = "",
         priority: str = "medium",
         completed: bool = False,
-        created_at: Optional[str] = None
+        created_at: Optional[str] = None,
+        task_id: Optional[int] = None
     ):
         """
         Initialize a new Task instance.
 
         Args:
-            task_id: Unique identifier for the task
             title: Title of the task
-            description: Detailed description of the task
-            priority: Priority level (low, medium, high)
-            completed: Whether the task is completed
-            created_at: Timestamp when the task was created
+            description: Detailed description of the task (default: "")
+            priority: Priority level (low, medium, high) (default: "medium")
+            completed: Whether the task is completed (default: False)
+            created_at: Timestamp when the task was created (default: None)
+            task_id: Unique identifier for the task (default: None)
         """
         self.id = task_id
         self.title = title
